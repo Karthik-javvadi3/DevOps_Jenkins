@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("data:image/jpeg;base64,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");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            background:transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            box-sizing: border-box;
+            transition: background-color 0.5s;
+        }
+        .form-container:hover {
+            background-color: transparent;
+        }
+        .login-container {
+            border-right: 30px solid transparent;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: bisque;
+            font-style: oblique;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            height:100%;
+            outline:none;
+            font-size:17px;
+            padding-left:20px;
+            background:transparent;
+            color:#fff;
+        }
+        input:focus {
+            border-color: skyblue;
+            box-shadow: 0 0 8px skyblue;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: rgb(255, 255, 255,0.15);
+            border: none;
+            color: black;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #a24cae;
+            transform: scale(1.05);
+        }
+        #email_error, #pass_error {
+            color: red;
+            display: none;
+        }
+    </style>
+    <script>
+        function validateLogin() {
+            var email = document.forms["login_form"]["email"].value;
+            var password = document.forms["login_form"]["password"].value;
+            var email_error = document.getElementById("login_email_error");
+            var pass_error = document.getElementById("login_pass_error");
+            email_error.style.display = "none";
+            pass_error.style.display = "none";
+            if (email == "") {
+                email_error.style.display = "block";
+                return false;
+            }
+            if (password == "") {
+                pass_error.style.display = "block";
+                return false;
+            }
+            return true;
+        }
+        function validateSignup() {
+            var email = document.forms["signup_form"]["email"].value;
+            var password = document.forms["signup_form"]["password"].value;
+            var name = document.forms["signup_form"]["name"].value;
+            var age = document.forms["signup_form"]["age"].value;
+            var r_pwd = document.forms["signup_form"]["r_pwd"].value;
+            var email_error = document.getElementById("signup_email_error");
+            var pass_error = document.getElementById("signup_pass_error");
+            email_error.style.display = "none";
+            pass_error.style.display = "none";
+            if (email == "" || password == "" || name == "" || age == "" || r_pwd == "") {
+                email_error.style.display = "block";
+                return false;
+            }
+            if (password != r_pwd) {
+                pass_error.style.display = "block";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container login-container">
+            <form name="login_form" method="post" action="/login_s" onsubmit="return validateLogin()">
+                <h2>Login</h2>
+                <div style="color: antiquewhite;" id="login_email_error">Email or Phone</div>
+                <input type="text" name="email" placeholder="Email or Phone Number">
+                <div style="color: antiquewhite;" id="login_pass_error">Password</div>
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form-container signup-container">
+            <form name="signup_form" method="post" action="/signup_s" onsubmit="return validateSignup()">
+                <h2>Sign Up</h2>
+                <div style="color: antiquewhite;" id="signup_email_error">fill up all fields</div>
+                <input type="text" name="email" placeholder="Email or Phone Number">
+                <input type="text" name="name" placeholder="Name">
+                <input type="text" name="age" placeholder="Age">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="r_pwd" placeholder="Re-Enter Password">
+                <div style="color:rgb(231, 21, 21)" id="signup_pass_error">Passwords do not match</div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
